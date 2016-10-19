@@ -1,0 +1,16 @@
+{
+  "name": "Countdown",
+  "version": "0.1.0",
+  "author": "Yudai Udagawa <nimius.rd@gmail.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.0.0",
+    "eslint": "^3.8.1"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "git@github.com:nimiusrd/Countdown.git",
+    "type": "git"
+  }
+}
