@@ -2,16 +2,16 @@ const webpack = require('webpack');
 
 module.exports = {
   devServer: {
-    contentBase: './public'
+    contentBase: './'
   },
-  entry: './app/index',
+  entry: './src/main',
   module: {
     loaders: [
       {
         exclude: /node_modules/,
         loader: 'babel-loader',
         test: /\.js$|\.tag$/
-      }
+      },
     ],
     preLoaders: [
       {
@@ -26,7 +26,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: `${__dirname}/public`
+    path: `${__dirname}/build`
   },
   plugins: [
     new webpack.ProvidePlugin(
