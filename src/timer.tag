@@ -1,16 +1,35 @@
 <timer>
-  <p>Seconds Elapsed: { time }</p>
+  <p>Now Date: { now }</p>
+  <p>Due Date: { due }</p>
+  <p>diff second: { duration }</p>
 
-  <script>
-    this.time = opts.time || 0
+  <script type="babel">
+    const moment = require('moment');
+    import "moment-duration-format"
+
+    this.now = moment();
+    this.due = moment(opts.due);
+
+    const duration = moment.duration(this.due.diff(this.now));
+    const format = 'YY/MM/DD HH:mm:ss';
+    this.duration = duration.format(format);
 
     this.tick = () => {
-      this.update({ time: ++this.time});
+      duration.subtract(1, 's');
+      if (duration._milliseconds > 0) {
+        this.update({
+          duration: duration.format(format)
+        })
+      } else {
+        this.unmount(true);
+      }
     }
-    const timer = setInterval(this.tick, 1000);
+
+    const timer = setInterval(this.tick, 1)
 
     this.on('unmount', (evt) => {
-      console.log(evt);
+      console.log("byebye")
+      clearInterval(timer)
     })
   </script>
 </timer>

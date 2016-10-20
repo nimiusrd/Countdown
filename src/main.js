@@ -1,3 +1,4 @@
-require('./app.tag')
+/*global riot:true*/
+import './app.tag';
 
-riot.mount('*');
+riot.mount('app');
