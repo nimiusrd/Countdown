@@ -166,7 +166,6 @@ module.exports = {
     "rest-spread-spacing": ["error", "always"],
     "semi-spacing": ["error", {"before": false, "after": true}],
     "semi": ["error", "always"],
-    "semi": ["error","always"],
     "sort-imports": ["warn", {"ignoreCase": false,"ignoreMemberSort": false,"memberSyntaxSortOrder": ["none", "all", "multiple", "single"]}],
     "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": true}],
     "sort-vars": ["warn", { "ignoreCase": true }],
