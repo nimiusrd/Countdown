@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   devServer: {
-    contentBase: './'
+    contentBase: './dev'
   },
   entry: './src/main',
   module: {
@@ -12,6 +12,11 @@ module.exports = {
         loader: 'babel-loader',
         test: /\.js$|\.tag$/
       },
+      {
+        exclude: /node_modules/,
+        loader: 'exports-loader',
+        test: /\.js$|\.tag$/
+      }
     ],
     preLoaders: [
       {
@@ -21,12 +26,12 @@ module.exports = {
           type: 'none'
         },
         test: /\.tag$/
-      }
+      },
     ]
   },
   output: {
     filename: 'bundle.js',
-    path: `${__dirname}/build`
+    path: `${__dirname}/app/scripts/`
   },
   plugins: [
     new webpack.ProvidePlugin(
@@ -34,5 +39,8 @@ module.exports = {
         riot: 'riot'
       }
     )
-  ]
+  ],
+  resolve: {
+    extensions: [ '', '.js', '.tag' ]
+  },
 };
