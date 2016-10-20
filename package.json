@@ -8,8 +8,11 @@
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
+    "babel-preset-es2015-riot": "^1.1.0",
+    "cpx": "^1.5.0",
     "eslint": "^3.8.1",
     "eslint-plugin-riot": "^0.1.6",
+    "exports-loader": "^0.6.3",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.0.0",
@@ -74,9 +77,10 @@
     "component-emitter": "1.2.0"
   },
   "scripts": {
-    "prebuild": "rimraf build/",
+    "prebuild": "rimraf app/scripts/",
+    "prestart": "rimraf dev/assets/",
     "build": "webpack",
-    "start": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot --output-public-path http://localhost:8080/assets/",
     "test": "karma start"
   }
 }
