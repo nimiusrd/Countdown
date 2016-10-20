@@ -25,7 +25,7 @@
       }
     }
 
-    const timer = setInterval(this.tick, 1)
+    const timer = setInterval(this.tick, 1000)
 
     this.on('unmount', (evt) => {
       console.log("byebye")
