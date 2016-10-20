@@ -1,5 +1,5 @@
 require('./timer.tag');
 
 <app>
-  <timer></timer>
+  <timer time="2"></timer>
 </app>

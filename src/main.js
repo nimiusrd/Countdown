@@ -1,3 +1,3 @@
-require('./app.tag');
+require('./app.tag')
 
 riot.mount('*');
