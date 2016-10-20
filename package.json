@@ -9,6 +9,14 @@
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
     "eslint": "^3.8.1",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-riot": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.1.2",
     "riot": "^2.6.4",
     "riotjs-loader": "^3.0.0",
     "webpack": "^1.13.2",
@@ -45,10 +53,23 @@
     "memory-fs": "0.3.0",
     "punycode": "1.4.1",
     "faye-websocket": "0.11.0",
-    "url-parse": "1.1.6"
+    "url-parse": "1.1.6",
+    "debug": "2.2.0",
+    "json5": "0.5.0",
+    "lodash": "4.16.4",
+    "user-home": "2.0.0",
+    "glob": "7.1.1",
+    "bytes": "2.4.0",
+    "mime-types": "2.1.12",
+    "braces": "1.8.5",
+    "semver": "5.3.0",
+    "has-binary": "0.1.7",
+    "socket.io-parser": "2.2.6",
+    "accepts": "1.3.3"
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline --hot"
+    "start": "webpack-dev-server --inline --hot",
+    "test": "karma start"
   }
 }

@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 
 module.exports = {
-  devServer: {contentBase: './public'},
+  devServer: {
+    contentBase: './public'
+  },
   entry: './app/index',
   module: {
     loaders: [
@@ -15,7 +17,9 @@ module.exports = {
       {
         exclude: /node_modules/,
         loader: 'riotjs-loader',
-        query: {type: 'none'},
+        query: {
+          type: 'none'
+        },
         test: /\.tag$/
       }
     ]
@@ -26,7 +30,9 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin(
-      {riot: 'riot'}
+      {
+        riot: 'riot'
+      }
     )
   ]
 };
