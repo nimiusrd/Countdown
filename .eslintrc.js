@@ -9,6 +9,7 @@ module.exports = {
     "ecmaVersion": 6,
   },
   "parser": "babel-eslint",
+  "plugins": ["riot"],
   "rules": {
     "array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false, "arraysInArrays": false }],
     "array-callback-return": "error",
