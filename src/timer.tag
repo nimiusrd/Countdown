@@ -1,35 +1,40 @@
 <timer>
-  <p>Now Date: { now }</p>
-  <p>Due Date: { due }</p>
-  <p>diff second: { duration }</p>
+  <h1>{ duration }</h1>
 
-  <script type="babel">
-    const moment = require('moment');
-    import "moment-duration-format"
+  <script>
+    // get custom tags
+    const app = this.parent
+    const {timer, message} = app.tags
+    const options = app.opts
 
-    this.now = moment();
-    this.due = moment(opts.due);
+    // import moment.js
+    const moment = require('moment')
+    require('moment-duration-format')
 
-    const duration = moment.duration(this.due.diff(this.now));
-    const format = 'YY/MM/DD HH:mm:ss';
-    this.duration = duration.format(format);
+    const now = moment()
+    const due = moment(options.due)
+
+    const duration = moment.duration(due.diff(now))
+    const format = options.format || 'YY/MM/DD HH:mm:ss'
+    this.duration = duration.format(format)
 
     this.tick = () => {
-      duration.subtract(1, 's');
-      if (duration._milliseconds > 0) {
+      if (duration._milliseconds > 1000) {
+        duration.subtract(1, 's')
         this.update({
           duration: duration.format(format)
         })
       } else {
-        this.unmount(true);
+        clearInterval(t)
+        this.unmount()
       }
     }
 
-    const timer = setInterval(this.tick, 1000)
+    const t = setInterval(this.tick, 1000)
 
-    this.on('unmount', (evt) => {
-      console.log("byebye")
-      clearInterval(timer)
+    this.on('unmount', () => {
+      const messageElem = message.root
+      messageElem.style.display = 'block'
     })
   </script>
 </timer>
