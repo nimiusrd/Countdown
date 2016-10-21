@@ -145,7 +145,7 @@ module.exports = {
     "no-warning-comments": "error",
     "no-whitespace-before-property": "error",
     "no-with": "error",
-    "object-curly-newline": ["error", {"ObjectExpression": "always","ObjectPattern": { "minProperties": 3, "multiline": true }}],
+    "object-curly-newline": ["error", {"ObjectPattern": { "minProperties": 2, "multiline": true }}],
     "object-curly-spacing": ["error", "never"],
     "object-property-newline": "error",
     "object-shorthand": ["error", "always"],
