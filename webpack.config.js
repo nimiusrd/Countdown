@@ -38,7 +38,16 @@ module.exports = {
       {
         riot: 'riot'
       }
-    )
+    ),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false,
+      }
+    }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja/)
   ],
   resolve: {
     extensions: [ '', '.js', '.tag' ]
