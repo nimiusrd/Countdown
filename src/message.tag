@@ -1,5 +1,5 @@
 <message>
-  <h1>{ message }</h1>
+  <div class="countdown-message">{ message }</div>
 
   <script>
     // get custom tags

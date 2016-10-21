@@ -1,5 +1,5 @@
 <timer>
-  <h1>{ duration }</h1>
+  <div class="countdown-timer">{ duration }</div>
 
   <script>
     // get custom tags
