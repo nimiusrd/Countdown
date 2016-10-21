@@ -4,9 +4,25 @@
     <title>Countdown</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+      .countdown-timer ,.countdown-message {
+        background: rgb(27, 233, 192);
+        padding: 20px;
+        margin: 10px;
+        border: 3px double rgb(27, 92, 139);
+        border-radius: 20px;
+        width: 50%;
+        text-align: center;
+        font-size: x-large;
+      }
+    </style>
   </head>
   <body>
-    <app due="2016-12-22 18:00:31" mg="Solomon!! I have returned!!"></app>
+    <h1>Countdown Demo</h1>
+    <h2>デフォルト表示</h2>
+    <app due="2020-12-22 18:00:31" mg="Solomon!! I have returned!!"></app>
+    <h2>日本語で表示</h2>
+    <app due="2020-12-22 18:00:31" mg="Solomon!! I have returned!!" format="YY[年]MM[か月] DD日HH[時間]mm[分]ss[秒]"></app>
     <script type="text/javascript" src="https://rawgit.com/nimiusrd/Countdown/master/app/scripts/bundle.js"></script>
   </body>
 </html>
