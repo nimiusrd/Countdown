@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 
-module.exports = {
-  devServer: {
-    contentBase: './dev'
-  },
+const config = {
+  devServer: {contentBase: './dev'},
   entry: './src/main',
   module: {
     loaders: [
@@ -22,9 +20,7 @@ module.exports = {
       {
         exclude: /node_modules/,
         loader: 'riotjs-loader',
-        query: {
-          type: 'none'
-        },
+        query: {type: 'none'},
         test: /\.tag$/
       },
     ]
@@ -34,22 +30,20 @@ module.exports = {
     path: `${__dirname}/app/scripts/`
   },
   plugins: [
-    new webpack.ProvidePlugin(
-      {
-        riot: 'riot'
-      }
-    ),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false,
-      }
-    }),
+    new webpack.ProvidePlugin({riot: 'riot'}),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja/)
   ],
-  resolve: {
-    extensions: [ '', '.js', '.tag' ]
-  },
+  resolve: {extensions: [ '', '.js', '.tag' ]},
 };
+
+// add productino config
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {warnings: false},
+      output: {comments: false}
+    })
+  );
+}
+
+module.exports = config;

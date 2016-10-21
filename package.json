@@ -83,7 +83,7 @@
     "prebuild:production": "rimraf app/scripts/",
     "prestart": "rimraf dev/assets/",
     "build": "webpack -d",
-    "build:production": "webpack -p",
+    "build:production": "NODE_ENV=production webpack",
     "start": "webpack-dev-server -d --inline --hot --output-public-path http://localhost:8080/assets/",
     "test": "karma start"
   }
