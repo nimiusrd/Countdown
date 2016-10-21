@@ -80,9 +80,11 @@
   },
   "scripts": {
     "prebuild": "rimraf app/scripts/",
+    "prebuild:production": "rimraf app/scripts/",
     "prestart": "rimraf dev/assets/",
-    "build": "webpack",
-    "start": "webpack-dev-server --inline --hot --output-public-path http://localhost:8080/assets/",
+    "build": "webpack -d",
+    "build:production": "webpack -p",
+    "start": "webpack-dev-server -d --inline --hot --output-public-path http://localhost:8080/assets/",
     "test": "karma start"
   }
 }
