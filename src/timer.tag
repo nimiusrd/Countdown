@@ -19,7 +19,7 @@
     this.duration = duration.format(format)
 
     this.tick = () => {
-      if (duration._milliseconds > 1000) {
+      if (this.check()) {
         duration.subtract(1, 's')
         this.update({
           duration: duration.format(format)
@@ -30,7 +30,17 @@
       }
     }
 
+    this.check = () => {
+      return (duration._milliseconds > 1000);
+    }
+
     const t = setInterval(this.tick, 1000)
+
+    this.on('mount', () => {
+      if (!this.check()) {
+        this.unmount()
+      }
+    })
 
     this.on('unmount', () => {
       const messageElem = message.root
