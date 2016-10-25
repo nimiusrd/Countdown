@@ -13,8 +13,6 @@
 
     const now = moment()
     const afterDue = moment(options.afterDue)
-    console.log(afterDue);
-    console.log();
 
     this.message = now.isBefore(afterDue) ? options.afterMg : options.mg
   </script>
