@@ -9,11 +9,10 @@
 
     // import moment.js
     const moment = require('moment')
-    require('moment-duration-format')
 
     const now = moment()
     const afterDue = moment(options.afterDue)
 
-    this.message = now.isBefore(afterDue) ? options.afterMg : options.mg
+    this.message = now.isAfter(afterDue) ? options.afterMg : options.mg
   </script>
 </message>
